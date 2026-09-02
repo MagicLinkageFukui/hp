@@ -555,7 +555,7 @@ img { max-width: 100%; display: block; }
 .site-footer .brand { flex-direction: column; gap: 12px; }
 
 .deck-list { list-style:none; margin:0; padding:0; columns:1; }
-.deck-list li { padding:8px 0; border-bottom:1px solid var(--line); font-size:0.95rem; }
+.deck-list li { padding:8px 0; font-size:0.95rem; }
 .deck-card { position:relative; cursor:help; border-bottom:1px dotted var(--gold-dim); }
 .deck-qty { font-family:var(--font-mono); color:var(--gold-bright); margin-right:4px; }
 .deck-preview {
@@ -574,11 +574,36 @@ img { max-width: 100%; display: block; }
 .deck-card:focus .deck-preview { display:block; }
 .deck-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; }
 @media (max-width: 700px) {
-  .deck-grid { grid-template-columns:repeat(3,1fr); gap:12px; }
-  .deck-preview { width:180px; }
+  .deck-grid { grid-template-columns:repeat(4,1fr); gap:10px; }
+  .deck-preview { width:160px; }
 }
 @media (max-width: 460px) {
-  .deck-grid { grid-template-columns:repeat(2,1fr); }
+  .deck-grid { grid-template-columns:repeat(4,1fr); gap:8px; }
+  .deck-grid span { font-size:0.6rem !important; }
+}
+
+.deck-thumb { position: relative; border-radius: 8px; overflow: hidden; border: 1px solid var(--line); line-height: 0; }
+.deck-thumb img { width: 100%; display: block; }
+.deck-thumb-qty {
+  position: absolute;
+  left: 6px;
+  bottom: 6px;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  background: rgba(10,10,12,0.75);
+  border: 1px solid var(--gold-dim);
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+@media (max-width: 460px) {
+  .deck-thumb-qty { width: 20px; height: 20px; font-size: 0.85rem; left: 4px; bottom: 4px; }
 }
 </style>
 </head>
@@ -622,9 +647,24 @@ img { max-width: 100%; display: block; }
 <section class="section">
   <div class="wrap">
     <div class="section-head">
+      <div class="section-title"><span class="num">INDEX</span>目次</div>
+    </div>
+    <ul style="list-style:none;margin:0;padding:0;">
+      <li style="padding:10px 0;border-bottom:1px solid var(--line);">
+        <a href="#deck-04-champion" style="color:var(--gold-bright);font-family:var(--font-mono);font-size:0.9rem;">第4回 優勝(イゼット果敢) — ヨシダ様</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="deck-04-champion" class="section" style="border-bottom:none;padding-bottom:0;">
+  <div class="wrap">
+    <div class="section-head">
       <div class="section-title"><span class="num">CHAMPION DECK</span>第4回のスタンダード優勝デッキ</div>
     </div>
-    <p style="color:var(--ink-dim);margin-bottom:32px;">優勝者: ヨシダ様</p>
+    <p style="color:var(--ink-dim);margin-bottom:4px;">優勝者: ヨシダ様</p>
+    <p style="color:var(--gold-bright);font-family:var(--font-display);font-size:1.3rem;font-weight:700;margin-bottom:32px;">イゼット果敢</p>
+    <h3 style="font-family:var(--font-display);font-size:1.05rem;color:var(--gold-bright);margin-bottom:16px;">メインボード</h3>
 
     <div class="grid-2">
       <ul class="deck-list">
@@ -683,8 +723,8 @@ img { max-width: 100%; display: block; }
           <img class="deck-preview" src="https://api.scryfall.com/cards/named?fuzzy=%E5%A1%94%E3%81%AE%E7%82%B9%E7%81%AB&format=image&version=normal" alt="塔の点火" loading="lazy">
         </span></li>
         <li><span class="deck-card">
-          <span class="deck-qty">2</span> 『占星術師』の天球儀
-          <img class="deck-preview" src="https://api.scryfall.com/cards/named?fuzzy=%E3%80%8E%E5%8D%A0%E6%98%9F%E8%A1%93%E5%B8%AB%E3%80%8F%E3%81%AE%E5%A4%A9%E7%90%83%E5%84%80&format=image&version=normal" alt="『占星術師』の天球儀" loading="lazy">
+          <span class="deck-qty">2</span> 「占星術師」の天球儀
+          <img class="deck-preview" src="https://api.scryfall.com/cards/named?fuzzy=%E3%80%8C%E5%8D%A0%E6%98%9F%E8%A1%93%E5%B8%AB%E3%80%8D%E3%81%AE%E5%A4%A9%E7%90%83%E5%84%80&format=image&version=normal" alt="「占星術師」の天球儀" loading="lazy">
         </span></li>
         <li><span class="deck-card">
           <span class="deck-qty">7</span> 島
@@ -712,87 +752,87 @@ img { max-width: 100%; display: block; }
   </div>
 </section>
 
-<section class="section" style="border-bottom:none;">
+<section class="section" style="border-bottom:none;padding-top:20px;">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-title"><span class="num">CARD IMAGES</span>使用カード一覧</div>
+      <div class="section-title"><span class="num">CARD IMAGES</span></div>
     </div>
     <div class="deck-grid">
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%83%89%E3%83%AC%E3%82%A4%E3%82%AF%E3%81%AE%E5%AD%B5%E5%8D%B5%E8%80%85&format=image&version=normal" alt="ドレイクの孵卵者" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×3 ドレイクの孵卵者</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%83%89%E3%83%AC%E3%82%A4%E3%82%AF%E3%81%AE%E5%AD%B5%E5%8D%B5%E8%80%85&format=image&version=normal" alt="ドレイクの孵卵者" loading="lazy">
+        <span class="deck-thumb-qty">3</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%83%A7%E9%99%A2%E3%81%AE%E9%80%9F%E6%A7%8D&format=image&version=normal" alt="僧院の速槍" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×3 僧院の速槍</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%83%A7%E9%99%A2%E3%81%AE%E9%80%9F%E6%A7%8D&format=image&version=normal" alt="僧院の速槍" loading="lazy">
+        <span class="deck-thumb-qty">3</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%82%B3%E3%83%BC%E3%83%AA%E9%8B%BC%E3%81%AE%E7%9F%AD%E5%88%80&format=image&version=normal" alt="コーリ鋼の短刀" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×4 コーリ鋼の短刀</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%82%B3%E3%83%BC%E3%83%AA%E9%8B%BC%E3%81%AE%E7%9F%AD%E5%88%80&format=image&version=normal" alt="コーリ鋼の短刀" loading="lazy">
+        <span class="deck-thumb-qty">4</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E6%B4%AA%E6%B0%B4%E3%81%AE%E5%A4%A7%E5%8F%A3%E3%81%B8&format=image&version=normal" alt="洪水の大口へ" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×3 洪水の大口へ</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E6%B4%AA%E6%B0%B4%E3%81%AE%E5%A4%A7%E5%8F%A3%E3%81%B8&format=image&version=normal" alt="洪水の大口へ" loading="lazy">
+        <span class="deck-thumb-qty">3</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E9%81%B8%E6%8A%9E&format=image&version=normal" alt="選択" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×4 選択</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E9%81%B8%E6%8A%9E&format=image&version=normal" alt="選択" loading="lazy">
+        <span class="deck-thumb-qty">4</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%92%86%E5%93%AE%E3%81%99%E3%82%8B%E7%84%BC%E7%82%89&format=image&version=normal" alt="咆哮する焼炉 // 蒸気サウナ" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×1 咆哮する焼炉 // 蒸気サウナ</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%92%86%E5%93%AE%E3%81%99%E3%82%8B%E7%84%BC%E7%82%89&format=image&version=normal" alt="咆哮する焼炉 // 蒸気サウナ" loading="lazy">
+        <span class="deck-thumb-qty">1</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%82%AA%E3%83%9A%E3%83%A9%E5%8A%87%E5%A0%B4%E3%81%AE%E3%83%A9%E3%83%96%E3%82%BD%E3%83%B3%E3%82%B0&format=image&version=normal" alt="オペラ劇場のラブソング" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×1 オペラ劇場のラブソング</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%82%AA%E3%83%9A%E3%83%A9%E5%8A%87%E5%A0%B4%E3%81%AE%E3%83%A9%E3%83%96%E3%82%BD%E3%83%B3%E3%82%B0&format=image&version=normal" alt="オペラ劇場のラブソング" loading="lazy">
+        <span class="deck-thumb-qty">1</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E6%8A%B9%E6%B6%88%E3%81%99%E3%82%8B%E7%A8%B2%E5%A6%BB&format=image&version=normal" alt="抹消する稲妻" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×1 抹消する稲妻</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E6%8A%B9%E6%B6%88%E3%81%99%E3%82%8B%E7%A8%B2%E5%A6%BB&format=image&version=normal" alt="抹消する稲妻" loading="lazy">
+        <span class="deck-thumb-qty">1</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E6%89%8B%E7%B7%B4&format=image&version=normal" alt="手練" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×4 手練</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E6%89%8B%E7%B7%B4&format=image&version=normal" alt="手練" loading="lazy">
+        <span class="deck-thumb-qty">4</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E9%A3%9F%E7%B3%A7%E8%A3%9C%E5%85%85&format=image&version=normal" alt="食糧補充" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×4 食糧補充</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E9%A3%9F%E7%B3%A7%E8%A3%9C%E5%85%85&format=image&version=normal" alt="食糧補充" loading="lazy">
+        <span class="deck-thumb-qty">4</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%B5%90%E8%BF%BD%E3%81%84%E3%81%AE%E6%89%8D%E8%83%BD&format=image&version=normal" alt="嵐追いの才能" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×4 嵐追いの才能</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%B5%90%E8%BF%BD%E3%81%84%E3%81%AE%E6%89%8D%E8%83%BD&format=image&version=normal" alt="嵐追いの才能" loading="lazy">
+        <span class="deck-thumb-qty">4</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%81%93%E3%81%AE%E7%94%BA%E3%81%AF%E7%8B%AD%E3%81%99%E3%81%8E%E3%82%8B&format=image&version=normal" alt="この町は狭すぎる" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×1 この町は狭すぎる</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%81%93%E3%81%AE%E7%94%BA%E3%81%AF%E7%8B%AD%E3%81%99%E3%81%8E%E3%82%8B&format=image&version=normal" alt="この町は狭すぎる" loading="lazy">
+        <span class="deck-thumb-qty">1</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%A1%94%E3%81%AE%E7%82%B9%E7%81%AB&format=image&version=normal" alt="塔の点火" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×4 塔の点火</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%A1%94%E3%81%AE%E7%82%B9%E7%81%AB&format=image&version=normal" alt="塔の点火" loading="lazy">
+        <span class="deck-thumb-qty">4</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%80%8E%E5%8D%A0%E6%98%9F%E8%A1%93%E5%B8%AB%E3%80%8F%E3%81%AE%E5%A4%A9%E7%90%83%E5%84%80&format=image&version=normal" alt="『占星術師』の天球儀" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×2 『占星術師』の天球儀</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%80%8C%E5%8D%A0%E6%98%9F%E8%A1%93%E5%B8%AB%E3%80%8D%E3%81%AE%E5%A4%A9%E7%90%83%E5%84%80&format=image&version=normal" alt="「占星術師」の天球儀" loading="lazy">
+        <span class="deck-thumb-qty">2</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%B3%B6&format=image&version=normal" alt="島" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×7 島</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%B3%B6&format=image&version=normal" alt="島" loading="lazy">
+        <span class="deck-thumb-qty">7</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%B1%B1&format=image&version=normal" alt="山" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×2 山</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%B1%B1&format=image&version=normal" alt="山" loading="lazy">
+        <span class="deck-thumb-qty">2</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%83%AA%E3%83%90%E3%83%BC%E3%83%91%E3%82%A4%E3%82%A2%E3%83%BC%E3%81%AE%E5%A2%83%E7%95%8C&format=image&version=normal" alt="リバーパイアーの境界" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×4 リバーパイアーの境界</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%83%AA%E3%83%90%E3%83%BC%E3%83%91%E3%82%A4%E3%82%A2%E3%83%BC%E3%81%AE%E5%A2%83%E7%95%8C&format=image&version=normal" alt="リバーパイアーの境界" loading="lazy">
+        <span class="deck-thumb-qty">4</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%82%B7%E3%83%B4%E3%81%AE%E6%B5%85%E7%80%AC&format=image&version=normal" alt="シヴの浅瀬" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×4 シヴの浅瀬</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E3%82%B7%E3%83%B4%E3%81%AE%E6%B5%85%E7%80%AC&format=image&version=normal" alt="シヴの浅瀬" loading="lazy">
+        <span class="deck-thumb-qty">4</span>
       </div>
-      <div style="text-align:center;">
-        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%B0%96%E5%A1%94%E6%96%AD%E3%81%AE%E9%81%8B%E6%B2%B3&format=image&version=normal" alt="尖塔断の運河" loading="lazy" style="width:100%;border-radius:8px;border:1px solid var(--line);display:block;">
-        <span style="font-family:var(--font-mono);font-size:0.7rem;color:var(--ink-dim);">×4 尖塔断の運河</span>
+      <div class="deck-thumb">
+        <img src="https://api.scryfall.com/cards/named?fuzzy=%E5%B0%96%E5%A1%94%E6%96%AD%E3%81%AE%E9%81%8B%E6%B2%B3&format=image&version=normal" alt="尖塔断の運河" loading="lazy">
+        <span class="deck-thumb-qty">4</span>
       </div>
     </div>
     <p style="color:var(--ink-dim);font-size:0.72rem;margin-top:24px;">
